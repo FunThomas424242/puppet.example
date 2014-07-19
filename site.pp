@@ -27,6 +27,6 @@ exec { "eclipse-modul":
 node default {
 	include java7
 	include git
- 	# include eclipse //does not work
+ 	include eclipse 
 	notice('Well done!')
 }
