@@ -5,14 +5,24 @@ file { "/tmp/facts.yaml":
 
 
 class { 'eclipse':
+  #method          => 'download',
   release_name    => 'kepler',
-  service_release => 'SR2',
+  service_release => 'SR1',
 }
 
 eclipse::plugin { 'egit':
   method => 'p2_director',
   iu     => 'org.eclipse.egit.feature.group',
 }
+
+
+vcsrepo { ant:
+        path     => "/srv/ant",
+        source   => "https://github.com/maestrodev/puppet-ant.git",
+#        revision => "v0.8.3.4",
+        provider => "git",
+        ensure   => present,
+    }
 
 
 node default {
