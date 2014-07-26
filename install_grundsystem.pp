@@ -15,7 +15,7 @@
 #	}
 #}
 
-class alsa::params {
+class grundsystem::params {
   case $::osfamily {
     "Debian": {
       case $::lsbdistcodename {
@@ -31,7 +31,7 @@ class alsa::params {
 }
 
 
-class alsa inherits alsa::params {
+class grundsystem inherits grundsystem::params {
   package { "alsa-base":
     ensure => installed
   }
@@ -58,11 +58,15 @@ class alsa inherits alsa::params {
     ensure => installed
   }
 
+ package {"p7zip-full":
+	ensure=>installed
+ }
+
 }
 
 
 
 node default {
-	include alsa
+	include grundsystem
 	#include wuala
 }
