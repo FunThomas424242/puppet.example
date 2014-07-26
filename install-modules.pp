@@ -64,6 +64,12 @@ exec { "maven-modul":
     path    => "/usr/local/bin/:/bin/:/usr/bin",
 }
 
+# ant 
+exec { "ant-modul":
+    command => "sudo puppet module install --force maestrodev-ant",
+    path    => "/usr/local/bin/:/bin/:/usr/bin",
+}
+
 
 #
 # mjanser
