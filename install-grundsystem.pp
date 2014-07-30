@@ -66,6 +66,11 @@ package {"xbmc":
 	ensure=>installed
  }
 
+package {"librarian-puppet":
+	ensure=>installed
+ }
+
+
 }
 
 
