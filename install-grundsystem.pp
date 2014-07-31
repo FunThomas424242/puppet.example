@@ -70,6 +70,10 @@ package {"librarian-puppet":
 	ensure=>installed
  }
 
+package {"hplip-gui":
+	ensure=>installed
+ }
+
 
 }
 
