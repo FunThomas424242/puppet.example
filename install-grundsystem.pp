@@ -74,6 +74,34 @@ package {"hplip-gui":
 	ensure=>installed
  }
 
+package {"emacs24":
+	ensure=>installed
+ }
+
+package {"gimp":
+	ensure=>installed
+ }
+
+package {"blender":
+	ensure=>installed
+ }
+
+package {"gramps":
+	ensure=>installed
+ }
+
+package {"electrum":
+	ensure=>installed
+ }
+
+package {"nautilus-dropbox":
+	ensure=>absent
+# wird über modul installiert
+ }
+
+package {"eclipse-platform":
+	ensure=>absent
+ }
 
 }
 
