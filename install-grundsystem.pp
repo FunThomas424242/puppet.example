@@ -94,6 +94,14 @@ package {"calibre":
 	ensure=>installed
  }
 
+package {"libreoffice":
+	ensure=>installed
+ }
+
+package {"libreoffice-l10n-de":
+	ensure=>installed
+ }
+
 package {"libreoffice-base":
 	ensure=>installed
  }
