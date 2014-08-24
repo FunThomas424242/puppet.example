@@ -90,6 +90,35 @@ package {"gramps":
 	ensure=>installed
  }
 
+package {"calibre":
+	ensure=>installed
+ }
+
+package {"libreoffice-base":
+	ensure=>installed
+ }
+
+package {"libreoffice-calc":
+	ensure=>installed
+ }
+
+package {"libreoffice-draw":
+	ensure=>installed
+ }
+
+package {"libreoffice-impress":
+	ensure=>installed
+ }
+
+package {"libreoffice-math":
+	ensure=>installed
+ }
+
+package {"libreoffice-writer":
+	ensure=>installed
+ }
+
+
 package {"electrum":
 	ensure=>installed
  }
