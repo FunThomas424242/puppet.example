@@ -3,17 +3,36 @@
 #
 #	apt::source { 'voria':
 #	  location   => 'http://repos.wuala.com',
+ #         release =>'trusty',
 #	  repos      => 'main',
 #	 # key        => '4BD6EC30',
 #	  #key_server => 'pgp.mit.edu',
 #	}
 #
-#	#apt::ppa { 'ppa:voria/ppa': }
+#	apt::ppa { 'ppa:voria/ppa': }
 #
 #	package{"wuala":
 #		ensure=>installed
 #	}
 #}
+
+#class wuala-install {
+#
+#	apt::source { 'super-os':
+#	  location   => 'http://www.ubuntuupdates.org/super-os',
+#	  #repos      => 'main',
+#	 # key        => '4BD6EC30',
+#	  #key_server => 'pgp.mit.edu',
+#	}
+#
+#	apt::ppa { 'ppa:super-os/ppa': }
+#
+#	package{"wuala":
+#		ensure=>installed
+#	}
+#}
+
+
 
 class grundsystem::params {
   case $::osfamily {
@@ -145,6 +164,6 @@ package {"eclipse-platform":
 
 
 node default {
-	include grundsystem
 	#include wuala
+	include grundsystem
 }
