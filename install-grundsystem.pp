@@ -51,116 +51,43 @@ class grundsystem::params {
 
 
 class grundsystem inherits grundsystem::params {
-  package { "alsa-base":
-    ensure => installed
-  }
-  package { "alsa-utils":
-    ensure => installed
-  }
-  package { "libasound2-plugin-equal":
-    ensure => installed
-  }
- package { "qasconfig":
-    ensure => installed
-  }
- package { "alsaplayer":
-    ensure => installed
-  }
-  package { "vlc":
-    ensure => installed
-  }
-  package { "padevchooser":
-    ensure => installed
-  }
+  
+	
+	$libsToInstall = ["hplip-gui","librarian-puppet","xbmc", "qasconfig" ,"libasound2-plugin-equal","alsa-base"]
+	  package { $libsToInstall:
+	    ensure => "installed",
+	    #require => Exec['apt-get update']
+	  }
+	
+	$tools = ["p7zip-full", "fglrx","padevchooser"]
+	  package { $tools:
+	    ensure => "installed",
+	    #require => Exec['apt-get update']
+	  }
+	
+	
+	$officePackages = ["libreoffice","libreoffice-base","libreoffice-l10n-de","libreoffice-draw","libreoffice-calc","libreoffice-writer", "libreoffice-math", "libreoffice-impress" ]
+	  package { $officePackages:
+	    ensure => "installed",
+	    #require => Exec['apt-get update']
+	  }
+	
+	
+	 $packagesToInstall = [ "vlc", "electrum","calibre","gramps","blender","gimp","emacs24","alsaplayer", "alsa-utils"]
+	  package { $packagesToInstall:
+	    ensure => "installed",
+	    #require => Exec['apt-get update']
+	  }
+	
+	
+	$packagesToPurge = [ "nautilus-dropbox", "eclipse-platform" ]
+	  package { $packagesToPurge:
+	    ensure => "absent",
+	    #require => Exec['apt-get update']
+	 }
 
- package { "fglrx":
-    ensure => installed
-  }
-
- package {"p7zip-full":
-	ensure=>installed
- }
-
-package {"xbmc":
-	ensure=>installed
- }
-
-package {"librarian-puppet":
-	ensure=>installed
- }
-
-package {"hplip-gui":
-	ensure=>installed
- }
-
-package {"emacs24":
-	ensure=>installed
- }
-
-package {"gimp":
-	ensure=>installed
- }
-
-package {"blender":
-	ensure=>installed
- }
-
-package {"gramps":
-	ensure=>installed
- }
-
-package {"calibre":
-	ensure=>installed
- }
-
-package {"libreoffice":
-	ensure=>installed
- }
-
-package {"libreoffice-l10n-de":
-	ensure=>installed
- }
-
-package {"libreoffice-base":
-	ensure=>installed
- }
-
-package {"libreoffice-calc":
-	ensure=>installed
- }
-
-package {"libreoffice-draw":
-	ensure=>installed
- }
-
-package {"libreoffice-impress":
-	ensure=>installed
- }
-
-package {"libreoffice-math":
-	ensure=>installed
- }
-
-package {"libreoffice-writer":
-	ensure=>installed
- }
-
-
-package {"electrum":
-	ensure=>installed
- }
-
-package {"nautilus-dropbox":
-	ensure=>absent
-# wird über modul installiert
- }
-
-package {"eclipse-platform":
-	ensure=>absent
- }
 
 }
-
 
 
 node default {
