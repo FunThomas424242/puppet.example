@@ -32,7 +32,22 @@
 #	}
 #}
 
+Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
+class system-update {
+
+  exec { 'apt-get update':
+    command => 'apt-get update -y',
+  }
+
+  $sysPackages = [ "build-essential" ]
+  package { $sysPackages:
+    ensure => "installed",
+    require => Exec['apt-get update'],
+  }
+}
+
+include system-update
 
 class grundsystem::params {
   case $::osfamily {
@@ -73,14 +88,14 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	 $packagesToInstall = [ "vlc", "electrum","calibre","gramps","blender","gimp","emacs24","alsaplayer", "alsa-utils"]
+	 $packagesToInstall = [ "evolution","vlc", "electrum","calibre","gramps","blender","gimp","emacs24","alsaplayer", "alsa-utils","flush"]
 	  package { $packagesToInstall:
 	    ensure => "installed",
 	    #require => Exec['apt-get update']
 	  }
 	
 	
-	$packagesToPurge = [ "nautilus-dropbox", "eclipse-platform" ]
+	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","eclipse-platform", "transmission-gtk","transmission-remote-gtk","transmission-qt","transgui"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    #require => Exec['apt-get update']
