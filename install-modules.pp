@@ -87,6 +87,6 @@ exec { "eclipse-modul":
 
 # dropbox 
 exec { "dropbox-modul":
-    command => "sudo puppet module install --force rcoleman-dropbox",
-    path    => "/usr/local/bin/:/bin/:/usr/bin",
+   command => "sudo puppet module install --force rcoleman-dropbox",
+  path    => "/usr/local/bin/:/bin/:/usr/bin",
 }

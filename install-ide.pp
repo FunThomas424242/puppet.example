@@ -7,14 +7,10 @@ file { "/tmp/facts.yaml":
 class  { 'eclipse':
   method          => 'download',
   release_name    => 'kepler',
-  service_release => 'SR2',
+  service_release => 'SR1',
   ensure => present
 }
 
-#eclipse::plugin { 'egit':
-# method => 'p2_director',
- #iu     => 'org.eclipse.egit.feature.group'
-#}
 
 #eclipse::plugin { 'pdt':
  # method     => 'p2_director',
@@ -33,10 +29,6 @@ class  { 'eclipse':
 
 
 node default {
-	include java7
-	include git
-	include maven
 	include eclipse 
-	include dropbox
 #	notice('Well done!')
 }
