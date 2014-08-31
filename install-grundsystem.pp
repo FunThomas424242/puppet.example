@@ -42,7 +42,7 @@ class system-update {
 
   $sysPackages = [ "build-essential" ]
   package { $sysPackages:
-    ensure => "installed",
+    ensure => "latest",
     require => Exec['apt-get update'],
   }
 }
@@ -68,37 +68,37 @@ class grundsystem::params {
 class grundsystem inherits grundsystem::params {
   
 	
-	$libsToInstall = ["hplip-gui","librarian-puppet","xbmc", "qasconfig" ,"libasound2-plugin-equal","alsa-base"]
+	$libsToInstall = ["hplip-gui","librarian-puppet","xbmc", "qasconfig" ,"libasound2-plugin-equal","alsa-base","software-properties-gtk"]
 	  package { $libsToInstall:
-	    ensure => "installed",
-	    #require => Exec['apt-get update']
+	    ensure => "latest",
+	    require => Exec['apt-get update']
 	  }
 	
 	$tools = ["p7zip-full", "fglrx","padevchooser"]
 	  package { $tools:
-	    ensure => "installed",
-	    #require => Exec['apt-get update']
+	    ensure => "latest",
+	    require => Exec['apt-get update']
 	  }
 	
 	
 	$officePackages = ["libreoffice","libreoffice-base","libreoffice-l10n-de","libreoffice-draw","libreoffice-calc","libreoffice-writer", "libreoffice-math", "libreoffice-impress" ]
 	  package { $officePackages:
-	    ensure => "installed",
-	    #require => Exec['apt-get update']
+	    ensure => "latest",
+	    require => Exec['apt-get update']
 	  }
 	
 	
-	 $packagesToInstall = [ "evolution","vlc", "electrum","calibre","gramps","blender","gimp","emacs24","alsaplayer", "alsa-utils","flush"]
+	 $packagesToInstall = [ "eclipse-platform", "simple-scan", "evolution","vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush"]
 	  package { $packagesToInstall:
-	    ensure => "installed",
-	    #require => Exec['apt-get update']
+	    ensure => "latest",
+	    require => Exec['apt-get update']
 	  }
 	
 	
-	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","eclipse-platform", "transmission-gtk","transmission-remote-gtk","transmission-qt","transgui"]
+	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
-	    #require => Exec['apt-get update']
+	    require => Exec['apt-get update']
 	 }
 
 
