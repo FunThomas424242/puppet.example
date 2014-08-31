@@ -68,7 +68,7 @@ class grundsystem::params {
 class grundsystem inherits grundsystem::params {
   
 	
-	$libsToInstall = ["hplip-gui","librarian-puppet","xbmc", "qasconfig" ,"libasound2-plugin-equal","alsa-base","software-properties-gtk"]
+	$libsToInstall = ["hplip-gui","librarian-puppet","puppet", "xbmc", "qasconfig" ,"libasound2-plugin-equal","alsa-base","software-properties-gtk"]
 	  package { $libsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
