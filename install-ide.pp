@@ -7,8 +7,8 @@ file { "/tmp/facts.yaml":
 class  { 'eclipse':
   method          => 'download',
   release_name    => 'kepler',
-  service_release => 'SR1',
-  ensure => present
+  service_release => 'SR2',
+  ensure => present,
 }
 
 
