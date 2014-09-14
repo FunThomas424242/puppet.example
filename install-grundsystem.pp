@@ -106,6 +106,5 @@ class grundsystem inherits grundsystem::params {
 
 
 node default {
-	#include wuala
 	include grundsystem
 }

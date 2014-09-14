@@ -12,11 +12,11 @@ class  { 'eclipse':
 }
 
 
-#eclipse::plugin { 'pdt':
- # method     => 'p2_director',
-  #iu         => 'org.eclipse.php.feature.group',
-  #repository => 'http://p2-dev.pdt-extensions.org/'
-#}
+eclipse::plugin { 'pdt':
+ method     => 'p2_director',
+  iu         => 'org.eclipse.php.feature.group',
+  repository => 'http://p2-dev.pdt-extensions.org/'
+}
 
 
 #vcsrepo { ant:
