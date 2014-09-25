@@ -88,12 +88,18 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	 $packagesToInstall = [ "eclipse-platform", "simple-scan", "evolution","vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush"]
+	 $packagesToInstall = [ "eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution","vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa"]
 	  package { $packagesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
 	  }
 	
+         $gamesToInstall = [ "fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
+	  package { $gamesToInstall:
+	    ensure => "latest",
+	    require => Exec['apt-get update']
+	  }
+
 	
 	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
 	  package { $packagesToPurge:
