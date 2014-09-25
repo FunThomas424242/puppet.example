@@ -95,7 +95,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui"]
+	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']
