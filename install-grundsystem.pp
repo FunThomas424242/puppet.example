@@ -88,7 +88,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	 $packagesToInstall = [ "eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution","vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa"]
+	 $packagesToInstall = [ "eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa"]
 	  package { $packagesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -101,7 +101,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 
 	
-	$packagesToPurge = [ "nautilus-dropbox", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
+	$packagesToPurge = [ "nautilus-dropbox",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']
