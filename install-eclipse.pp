@@ -12,10 +12,10 @@ class  { 'eclipse':
 }
 
 
-eclipse::plugin { 'pdt':
- method     => 'p2_director',
-  iu         => 'org.eclipse.php.feature.group',
-  repository => 'http://p2-dev.pdt-extensions.org/'
+eclipse::plugin { 'm2e':
+  method     => 'p2_director',
+  iu         => 'org.eclipse.m2e.feature.feature.group',
+  repository => 'http://download.eclipse.org/releases/kepler'
 }
 
 
