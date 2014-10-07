@@ -15,7 +15,8 @@ class  { 'eclipse':
 eclipse::plugin { 'm2e':
   method     => 'p2_director',
   iu         => 'org.eclipse.m2e.feature.feature.group',
-  repository => 'http://download.eclipse.org/releases/kepler'
+  repository => 'http://download.eclipse.org/releases/kepler',
+  ensure     =>  present,
 }
 
 
