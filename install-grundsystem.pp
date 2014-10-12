@@ -1,36 +1,4 @@
 
-#class wuala {
-#
-#	apt::source { 'voria':
-#	  location   => 'http://repos.wuala.com',
- #         release =>'trusty',
-#	  repos      => 'main',
-#	 # key        => '4BD6EC30',
-#	  #key_server => 'pgp.mit.edu',
-#	}
-#
-#	apt::ppa { 'ppa:voria/ppa': }
-#
-#	package{"wuala":
-#		ensure=>installed
-#	}
-#}
-
-#class wuala-install {
-#
-#	apt::source { 'super-os':
-#	  location   => 'http://www.ubuntuupdates.org/super-os',
-#	  #repos      => 'main',
-#	 # key        => '4BD6EC30',
-#	  #key_server => 'pgp.mit.edu',
-#	}
-#
-#	apt::ppa { 'ppa:super-os/ppa': }
-#
-#	package{"wuala":
-#		ensure=>installed
-#	}
-#}
 
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
@@ -74,7 +42,7 @@ class grundsystem inherits grundsystem::params {
 	    require => Exec['apt-get update']
 	  }
 	
-	$tools = ["p7zip", "fglrx", "padevchooser"]
+	$tools = ["p7zip", "fglrx", "padevchooser", "torchat", "gns3"]
 	  package { $tools:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -101,7 +69,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 
 	
-	$packagesToPurge = ["gnome-mplayer", "nautilus-dropbox",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
+	$packagesToPurge = ["rutilt", "etherape", "gnome-mplayer", "nautilus-dropbox",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']

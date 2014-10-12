@@ -20,6 +20,15 @@ eclipse::plugin { 'm2e':
 }
 
 
+eclipse::plugin { 'emftext':
+  method     => 'p2_director',
+  iu         => 'org.emftext.runtime.feature.feature.group',
+  repository => 'http://emftext.org/update/',
+  ensure     =>  present,
+}
+
+
+
 #vcsrepo { ant:
 #        path     => "/srv/ant",
 #        source   => "https://github.com/maestrodev/puppet-ant.git",
