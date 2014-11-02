@@ -42,7 +42,7 @@ class grundsystem inherits grundsystem::params {
 	    require => Exec['apt-get update']
 	  }
 	
-	$tools = ["p7zip", "fglrx", "padevchooser", "torchat", "gns3", "xscreensaver"]
+	$tools = ["p7zip", "fglrx", "padevchooser", "torchat", "gns3", "xscreensaver", "ksnapshot"]
 	  package { $tools:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
