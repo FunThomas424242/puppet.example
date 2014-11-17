@@ -56,7 +56,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	 $packagesToInstall = [ "eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa", "nautilus-dropbox"]
+	 $packagesToInstall = [ "blogilo","eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa","dropbox", "nautilus-dropbox"]
 	  package { $packagesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
