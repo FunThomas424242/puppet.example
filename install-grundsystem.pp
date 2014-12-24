@@ -36,7 +36,7 @@ class grundsystem::params {
 class grundsystem inherits grundsystem::params {
   
 	
-	$libsToInstall = ["network-manager","network-manager-gnome","hplip-gui","librarian-puppet","puppet", "qasconfig" ,"libasound2-plugin-equal","alsa-base","software-properties-gtk", "aptitude"]
+	$libsToInstall = ["network-manager","network-manager-gnome","librarian-puppet","puppet", "qasconfig" ,"libasound2-plugin-equal","alsa-base","software-properties-gtk", "aptitude"]
 	  package { $libsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -49,7 +49,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	$packagesToPurge = ["gnumeric", "rutilt", "etherape", "gnome-mplayer",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword", "wireshark"]
+	$packagesToPurge = ["hplip-gui","gnumeric", "rutilt", "etherape", "gnome-mplayer",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword", "wireshark"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']
