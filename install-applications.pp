@@ -47,6 +47,13 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 
+	$toolsToInstall = [ "gparted" ]
+	  package { $toolsToInstall:
+	    ensure => "latest",
+	    require => Exec['apt-get update']
+	  }
+	
+
 	
 	$gamesToInstall = [ "fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
 	  package { $gamesToInstall:
