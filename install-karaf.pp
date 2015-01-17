@@ -5,4 +5,5 @@ node default {
 	karafVersion => '3.0.1',
 	tmpDir => '/tmp',
      }
+  
 }

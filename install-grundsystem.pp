@@ -49,7 +49,7 @@ class grundsystem inherits grundsystem::params {
 	  }
 	
 	
-	$packagesToPurge = ["hplip-gui","gnumeric", "rutilt", "etherape", "gnome-mplayer",  "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword", "wireshark"]
+	$packagesToPurge = ["hplip-gui","gnumeric", "rutilt", "etherape", "gnome-mplayer",  "sylpheed","transgui", "abiword", "wireshark","transmission","transmission-remote-gtk"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']
