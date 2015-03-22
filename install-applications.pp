@@ -47,7 +47,7 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 
-	$toolsToInstall = [ "gparted","shutter","filezilla"]
+	$toolsToInstall = [ "gparted","shutter","filezilla","meld"]
 	  package { $toolsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -61,7 +61,7 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 	
-	$packagesToPurge = ["ksnapshot","gnumeric", "rutilt", "etherape", "gnome-mplayer", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword"]
+	$packagesToPurge = ["ksnapshot","gnumeric", "rutilt", "etherape", "gnome-mplayer", "sylpheed","transmission-gtk","transmission-remote-gtk","transmission-qt","transgui", "abiword","mc"]
 	  package { $packagesToPurge:
 	    ensure => "absent",
 	    require => Exec['apt-get update']
