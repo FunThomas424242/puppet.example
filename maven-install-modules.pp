@@ -1,10 +1,9 @@
 
-# stdlib 
-exec { "stdlib":
+# wget 
+exec { "masestrodev-wget-modul":
     command => "sudo puppet module install --force maestrodev-wget",
     path    => "/usr/local/bin/:/bin/:/usr/bin",
 }
-
 
 # maven Maestrodev
 exec { "maven-maestrodev":
