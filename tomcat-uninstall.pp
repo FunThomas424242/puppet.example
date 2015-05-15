@@ -9,4 +9,5 @@ tomcat::instance { 'tomcat8':
 }->
 tomcat::service { 'default':
   catalina_base => '/opt/apache-tomcat/tomcat8',
+  service_ensure => 'false',
 }
