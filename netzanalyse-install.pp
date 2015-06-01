@@ -42,7 +42,7 @@ class analysesystem inherits grundsystem::params {
 	    require => Exec['apt-get update']
 	  }
 	
-	$tools = ["dsniff"]
+	$tools = ["dsniff","finger","tcpdump", "traceroute", "iputils-tracepath"]
 	  package { $tools:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
