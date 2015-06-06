@@ -35,7 +35,7 @@ class applications::params {
 
 class applications inherits applications::params {
 	
-	 $packagesToInstall = [ "dropbox", "blogilo","eclipse-platform", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa"]
+	 $packagesToInstall = [ "dropbox", "blogilo","eclipse-platform", "gradle", "giggle", "jabref", "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "vlc", "electrum","calibre","gramps","blender","gimp","firefox","emacs24","alsaplayer", "alsa-utils","flush", "gpa"]
 	  package { $packagesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
