@@ -55,7 +55,7 @@ class applications inherits applications::params {
 	
 
 	
-	$gamesToInstall = [ "fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
+	$gamesToInstall = [ "npm","fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
 	  package { $gamesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
