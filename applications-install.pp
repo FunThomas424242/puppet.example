@@ -47,7 +47,7 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 
-	$toolsToInstall = [ "gparted","shutter","kazam","filezilla","meld","yacy"]
+	$toolsToInstall = [ "npm","node","gparted","shutter","kazam","filezilla","meld","yacy"]
 	  package { $toolsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -55,7 +55,7 @@ class applications inherits applications::params {
 	
 
 	
-	$gamesToInstall = [ "npm","fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
+	$gamesToInstall = [ "fltk1.1-games", "cgoban", "gnubg", "lincity-ng" ]
 	  package { $gamesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
