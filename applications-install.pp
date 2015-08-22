@@ -47,7 +47,7 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 
-	$toolsToInstall = [ "npm","node","gparted","shutter","kazam","filezilla","meld","yacy"]
+	$toolsToInstall = [ "npm","node","gparted","shutter","kazam","filezilla","meld","yacy","thunderbird", "enigmail"]
 	  package { $toolsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
