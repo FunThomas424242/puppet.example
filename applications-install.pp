@@ -35,7 +35,7 @@ class applications::params {
 
 class applications inherits applications::params {
 	
-	 $packagesToInstall = [ "gradle", "giggle",  "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "alsaplayer", "alsa-utils", "libpcsclite1", "pcscd","pcsc-tools","libccid"]
+	 $packagesToInstall = [ "gradle", "giggle",  "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "alsaplayer", "alsa-utils", "libpcsclite1", "pcscd","pcsc-tools","libccid","coolkey"]
 	  package { $packagesToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
