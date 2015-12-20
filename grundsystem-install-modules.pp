@@ -38,16 +38,6 @@ exec { "git-modul":
 }
 
 #
-# softek
-#
-
-# java 
-exec { "java-modul":
-    command => "sudo puppet module install --force softek-java7",
-    path    => "/usr/local/bin/:/bin/:/usr/bin",
-}
-
-#
 # maestrodev
 #
 

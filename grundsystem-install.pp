@@ -55,7 +55,6 @@ class grundsystem inherits grundsystem::params {
 	    require => Exec['apt-get update']
 	 }
 
-
 }
 
 
