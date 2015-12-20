@@ -33,6 +33,7 @@ class applications::params {
 }
 
 
+
 class applications inherits applications::params {
 	
 	 $packagesToInstall = [ "gradle", "giggle",  "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "alsaplayer", "alsa-utils", "libpcsclite1", "pcscd","pcsc-tools","libccid","coolkey"]
@@ -47,7 +48,7 @@ class applications inherits applications::params {
 	    require => Exec['apt-get update']
 	  }
 
-	$toolsToInstall = ["flush", "gpa","vlc",  "electrum","calibre","gramps","blender","gimp","firefox","emacs24","jabref","dropbox", "blogilo","eclipse-platform", "npm","node","gparted","shutter","kazam","filezilla","meld","yacy","thunderbird", "enigmail","kleopatra"]
+	$toolsToInstall = ["flush", "gpa","vlc",  "electrum","calibre","gramps","blender","gimp","firefox","emacs24","jabref", "blogilo","eclipse-platform", "npm","node","gparted","shutter","kazam","filezilla","meld","yacy","thunderbird", "enigmail","kleopatra"]
 	  package { $toolsToInstall:
 	    ensure => "latest",
 	    require => Exec['apt-get update']
@@ -70,7 +71,13 @@ class applications inherits applications::params {
 
 }
 
+# dropbox
+exec { "stdlib-modul":
+    command => "sudo puppet module install --force halyard-dropbox",
+    path    => "/usr/local/bin/:/bin/:/usr/bin",
+}
 
 node default {
 	include applications
+        include dropbox
 }
