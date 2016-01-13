@@ -17,24 +17,10 @@ class system-update {
 
 include system-update
 
-class applications::params {
-  case $::osfamily {
-    "Debian": {
-      case $::lsbdistcodename {
-        "wheezy": {
-        }
-        "trusty": {
-        }
-      default: { fail("unsupported release ${::lsbdistcodename}") }
-      }
-    }
-    default: { fail("unsupported platform ${::osfamily}") }
-  }
-}
 
 
 
-class applications inherits applications::params {
+class applications {
 	
 	 $packagesToInstall = [ "gradle", "giggle",  "kiki", "freemind", "spim", "simple-scan", "evolution", "keepass2", "alsaplayer", "alsa-utils", "libpcsclite1", "pcscd","pcsc-tools","libccid","coolkey"]
 	  package { $packagesToInstall:
