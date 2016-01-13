@@ -3,6 +3,7 @@ file { "/tmp/facts.yaml":
     content => inline_template("<%= scope.to_hash.reject { |k,v| !( k.is_a?(String) && v.is_a?(String) ) }.to_yaml %>"),
 }
 
+include archive::prerequisites
 
 class  { 'eclipse':
   method          => 'download',
@@ -20,12 +21,12 @@ eclipse::plugin { 'm2e':
 }
 
 
-eclipse::plugin { 'emftext':
-  method     => 'p2_director',
-  iu         => 'org.emftext.runtime.feature.feature.group',
-  repository => 'http://emftext.org/update/',
-  ensure     =>  present,
-}
+#eclipse::plugin { 'emftext':
+ # method     => 'p2_director',
+  #iu         => 'org.emftext.runtime.feature.feature.group',
+  #repository => 'http://emftext.org/update/',
+  #ensure     =>  present,
+#}
 
 
 
